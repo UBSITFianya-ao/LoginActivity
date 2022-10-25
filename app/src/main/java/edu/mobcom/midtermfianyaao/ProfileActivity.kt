@@ -1,11 +1,13 @@
 package edu.mobcom.midtermfianyaao
 
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 
 class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +34,13 @@ class ProfileActivity : AppCompatActivity() {
         logout.setOnClickListener{
             val i= Intent(this, MainActivity::class.java)
             startActivity(i)
+
+            try {
+                Toast.makeText(this,"Goodbye $rCNum", Toast.LENGTH_LONG).show()
+            }catch (e: ActivityNotFoundException){
+                Toast.makeText(this,"Content Error", Toast.LENGTH_LONG).show()
+            }
+
         }
 
     }
