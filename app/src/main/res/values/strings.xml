@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LoginActivity</string>
+    <string name="act_title">Login</string>
+    <string name="act_title2">Send Email</string>
+    <string name="act_titleprof">Firstname+Lastname Profile</string>
+    <string name="logout">Logout</string>
+
+</resources>
