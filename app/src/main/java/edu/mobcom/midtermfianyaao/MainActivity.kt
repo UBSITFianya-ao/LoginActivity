@@ -15,7 +15,9 @@ class MainActivity : AppCompatActivity() {
         val login: Button = findViewById(R.id.lb)
         val register: Button = findViewById(R.id.rb)
         val username: EditText = findViewById(R.id.un)
-
+        username.setText("20191578@s.ubaguio.edu")
+        val password: EditText = findViewById(R.id.pw)
+        username.setText("20191578")
 
         login.setOnClickListener{
             val i= Intent(this, MessageActivity::class.java)
@@ -27,18 +29,19 @@ class MainActivity : AppCompatActivity() {
             with(ilog) {
                 putExtra("Welcome, ", username.text.toString())
             }
-            var welcome = username.text.toString()
+
             try {
-                Toast.makeText(this,welcome, Toast.LENGTH_LONG).show()
+                Toast.makeText(this,"Welcome $username",Toast.LENGTH_LONG).show()
             }catch (e: ActivityNotFoundException){
                 Toast.makeText(this,"Content Error", Toast.LENGTH_LONG).show()
             }
+        }
 
             register.setOnClickListener {
                 val i = Intent(this, RegisterActivity::class.java)
                 startActivity(i)
             }
-        }
+
 
     }
 }
